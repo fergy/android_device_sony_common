@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     libqomx_core
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    SONYDoze
+
 # OSS
 PRODUCT_PACKAGES += \
     timekeep \
@@ -163,6 +167,10 @@ PRODUCT_PACKAGES += \
 # ExtendedSettings
 PRODUCT_PACKAGES += \
     ExtendedSettings
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # APN list
 PRODUCT_COPY_FILES += \

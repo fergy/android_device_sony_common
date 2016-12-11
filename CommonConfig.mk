@@ -70,7 +70,13 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_SECCOMP_POLICY += device/sony/common/seccomp
 
 # Enable dex-preoptimization to speed up first boot sequence
-WITH_DEXPREOPT := true
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 BUILD_KERNEL := true
 
